@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>秋招投递</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="topbar">
+        <div>
+          <h1>秋招投递</h1>
+          <p id="syncText">读取数据中...</p>
+        </div>
+        <div class="summary" aria-label="统计">
+          <div><strong id="totalCount">0</strong><span>岗位</span></div>
+          <div><strong id="appliedCount">0</strong><span>已投</span></div>
+          <div><strong id="historyCount">0</strong><span>记录</span></div>
+        </div>
+      </section>
+
+      <section class="controls">
+        <input id="keyword" type="search" placeholder="搜索公司、岗位或投递方式" autocomplete="off" />
+        <select id="batchFilter">
+          <option value="">全部批次</option>
+          <option value="秋招">秋招</option>
+          <option value="提前批">提前批</option>
+        </select>
+        <select id="appliedFilter">
+          <option value="">全部状态</option>
+          <option value="0">未投</option>
+          <option value="1">已投</option>
+          <option value="ignored">不感兴趣</option>
+        </select>
+        <button id="exportState" type="button">导出记录</button>
+        <label class="import-button">
+          导入记录
+          <input id="importState" type="file" accept="application/json" />
+        </label>
+      </section>
+
+      <section class="layout">
+        <div id="jobList" class="job-list"></div>
+        <aside class="history-panel">
+          <div class="panel-title">修改记录</div>
+          <div id="historyList" class="history-list"></div>
+        </aside>
+      </section>
+    </main>
+
+    <template id="jobTemplate">
+      <article class="job-card">
+        <div class="job-head">
+          <div>
+            <h2 class="company"></h2>
+            <div class="meta"></div>
+          </div>
+          <span class="batch"></span>
+        </div>
+        <div class="position"></div>
+        <a class="apply-method" target="_blank" rel="noreferrer"></a>
+        <div class="status-row">
+          <label class="check-label"><input class="applied" type="checkbox" /> 已投递</label>
+          <label class="check-label"><input class="ignored" type="checkbox" /> 不感兴趣</label>
+          <select class="stage"></select>
+        </div>
+        <textarea class="note" placeholder="备注：笔试、面试反馈、内推人..." maxlength="240"></textarea>
+      </article>
+    </template>
+
+    <script src="./app.js?v=20260713-ignored-company"></script>
+  </body>
+</html>
