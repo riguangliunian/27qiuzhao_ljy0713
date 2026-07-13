@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>简历投递填表助手设置</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="options">
+    <main>
+      <h1>简历投递填表助手设置</h1>
+
+      <section>
+        <h2>常用信息</h2>
+        <div id="profileFields" class="grid"></div>
+      </section>
+
+      <section>
+        <h2>自定义字段</h2>
+        <p>比如籍贯、政治面貌、生源地、期望岗位。关键词用逗号隔开，页面字段名里命中任意一个就会填写。</p>
+        <div id="customFields" class="field-list"></div>
+        <button id="addCustomField" type="button" class="secondary">添加字段</button>
+      </section>
+
+      <section>
+        <h2>教育经历</h2>
+        <p>每条对应一段教育。启用后，插件会自动在表单里依次添加并填写。</p>
+        <div id=”educationEntries” class=”entry-list”></div>
+        <button id=”add-education” type=”button” class=”secondary add-exp-btn”>+ 添加教育经历</button>
+      </section>
+
+      <section>
+        <h2>实习经历</h2>
+        <p>每条对应一段实习，多段实习依次添加即可。</p>
+        <div id=”internshipEntries” class=”entry-list”></div>
+        <button id=”add-internship” type=”button” class=”secondary add-exp-btn”>+ 添加实习经历</button>
+      </section>
+
+      <section>
+        <h2>项目经历</h2>
+        <p>每条对应一个项目。</p>
+        <div id=”projectEntries” class=”entry-list”></div>
+        <button id=”add-project” type=”button” class=”secondary add-exp-btn”>+ 添加项目经历</button>
+      </section>
+
+      <section>
+        <h2>简历文件</h2>
+        <p>在这里选择一次 PDF / Word。之后点击“填写当前页面”时，插件会尝试把这个文件放进网页的上传框。部分网站会拦截脚本上传，拦截时仍需要手动选择。</p>
+        <input id="resumeFileInput" type="file" accept="application/pdf,.pdf,.doc,.docx" />
+        <p id="resumeFileStatus"></p>
+      </section>
+
+      <section>
+        <h2>从简历文本预填</h2>
+        <p>PDF 自动解析中文不稳定。更稳的方式是复制简历文字到这里，再点“解析并预填”。</p>
+        <textarea id="resumeText" class="small" spellcheck="false" placeholder="粘贴简历文字，例如姓名、手机号、邮箱、学校、专业、籍贯、实习经历等。"></textarea>
+        <button id="parseResume" type="button" class="secondary">解析并预填</button>
+      </section>
+
+      <button id="save">保存设置</button>
+      <button id="reset" class="secondary">恢复默认</button>
+      <p id="status"></p>
+    </main>
+    <script src="options.js"></script>
+  </body>
+</html>

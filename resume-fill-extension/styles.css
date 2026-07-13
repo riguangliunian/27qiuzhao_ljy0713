@@ -1,0 +1,189 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  color: #111827;
+  background: #f6f7fb;
+}
+
+.popup {
+  width: 260px;
+  padding: 14px;
+}
+
+.options main {
+  width: min(920px, calc(100vw - 40px));
+  margin: 0 auto;
+  padding: 28px 0 48px;
+}
+
+h1 {
+  margin: 0 0 14px;
+  font-size: 20px;
+}
+
+h2 {
+  margin: 24px 0 8px;
+  font-size: 16px;
+}
+
+/* ── 常用信息 grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* ── 自定义字段 ── */
+.field-list {
+  display: grid;
+  gap: 12px;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.5fr 72px;
+  gap: 10px;
+  align-items: end;
+  padding: 12px;
+  border: 1px solid #d8dee9;
+  border-radius: 8px;
+  background: #fff;
+}
+
+/* ── 经历列表 ── */
+.entry-list {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 4px;
+}
+
+.exp-entry {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid #d8dee9;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.exp-entry-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.exp-entry-head .remove-entry {
+  margin-top: 0;
+  width: auto;
+  padding: 0 14px;
+}
+
+/* 经历字段行：自动适配 2 或 3 列 */
+.exp-row {
+  display: grid;
+  gap: 12px;
+}
+
+.exp-row-1 { grid-template-columns: 1fr; }
+.exp-row-2 { grid-template-columns: 1fr 1fr; }
+.exp-row-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+/* 经历内的 textarea */
+.exp-entry textarea {
+  min-height: 80px;
+  max-height: 240px;
+  resize: vertical;
+  padding: 8px 10px;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* "添加xxx经历"按钮 */
+.add-exp-btn {
+  width: auto;
+  padding: 0 18px;
+  margin-top: 8px;
+}
+
+/* ── 通用 ── */
+label {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  color: #475569;
+}
+
+label.inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 38px;
+}
+
+input,
+textarea,
+button {
+  border: 1px solid #d8dee9;
+  border-radius: 8px;
+  background: #fff;
+  color: #111827;
+  font: inherit;
+}
+
+input,
+button {
+  height: 38px;
+  padding: 0 10px;
+}
+
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+}
+
+textarea {
+  width: 100%;
+  min-height: 300px;
+  padding: 12px;
+  font-family: Consolas, "SFMono-Regular", monospace;
+  font-size: 13px;
+}
+
+textarea.small {
+  min-height: 150px;
+}
+
+button {
+  width: 100%;
+  margin-top: 10px;
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: #fff;
+  color: #111827;
+  border-color: #d8dee9;
+}
+
+p {
+  color: #64748b;
+  line-height: 1.5;
+}
+
+#status {
+  min-height: 20px;
+}
+
+@media (max-width: 640px) {
+  .grid,
+  .field-row,
+  .exp-row-2,
+  .exp-row-3 {
+    grid-template-columns: 1fr;
+  }
+}
